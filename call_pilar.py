@@ -2,13 +2,9 @@ from twilio.rest import Client
 from flask import Flask
 from twilio.twiml.voice_response import VoiceResponse
 
-dereksAccount_sid = "AC56128df038a050044d46a260a167b628"
+yourSID = "Enter your Account SID"
 
-pilarsAccount_sid = "AC81483797b5e106ad6bbaaf9ff2915bac"
-
-pilarsAuth_token = "65425b0233fc469f39a77886cace24c7"
-
-dereksAuth_token = "5ed8e20a9ee53b08480721ac08ceb167"
+yourAuth_Token = "Enter your Auth Token"
 
 
 # app = Flask(__name__)
@@ -22,25 +18,25 @@ dereksAuth_token = "5ed8e20a9ee53b08480721ac08ceb167"
 #     app.run()
 
 
-client = Client(dereksAccount_sid, dereksAuth_token)
+client = Client(yourSID, yourAuth_Token)
 
-# while True:
+# For flooding calls set inside of infinite loop
+
+# while True:  
 #
 #     client.messages.create(
 #         to=phone_number,
 #         from_="+13522681589",
 #         body="Gotcha!")
 
-dereksTrialNumber = "+13522688914"
+twilioNumber = "Enter your Twilio Number"
 
-pilarsTrialNumber = "+13522681589"
+numberToCall = "Enter desired number to call or flood"
 
-dereksNumber = "+13523211166"
 
-pilarsNumber = "+13522337206"
 
-call = client.calls.create(to=dereksNumber,from_=dereksTrialNumber,
-                           url='https://amber-kangaroo-1450.twil.io/assets/message.xml')
+call = client.calls.create(to=numberToCall,from_=twilioNumber, #These can be pulled from another file as well if you have a list of numbers
+                           url='Location where your XML file is')
 
 # print(client.sid)
 
