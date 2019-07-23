@@ -7,17 +7,6 @@ yourSID = "Enter your Account SID"
 yourAuth_Token = "Enter your Auth Token"
 
 
-# app = Flask(__name__)
-# @app.route("/answer", methods=['GET', 'POST'])
-# def answer_call():
-#     resp = VoiceResponse()
-#     resp.say("Derek is always watching you")
-#     return str(resp)
-#
-# if __name__ == "__main__":
-#     app.run()
-
-
 client = Client(yourSID, yourAuth_Token)
 
 # For flooding calls set inside of infinite loop
